@@ -1,0 +1,13 @@
+<html>
+    <head> <h1><center>Register</center></h1></head>
+    <body>
+        {% if form.error%}
+        <p>You form has error </p>
+        {% endif %}
+    <form action="{% url 'register_user' %}", method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type="submit">Register</button>
+    </form>
+</body>
+</html>
